@@ -1,0 +1,95 @@
+OBSERVER
+Bir nesnede bir liste vardır ve o nesnede bir durum oluştuğunda listedeki bütün nesnelerde bir metot çalıştırılır.
+- Bir e-ticaret sitesinde bir üründeki stok değişiminde o ürünü takip eden üyelere haber verilmesi.
+- Ham madde – ürün ilişkisi olan bir durumda, ham maddenin fiyatı değişince ürünün fiyatının da değişmesi.
+- Facebook da ki bir iletiye yorum yapılması durumunda o iletiye yorum yapan ve beğenen üyelere bildirim gitmes
+
+PROXY
+Proxy tasarım deseni çalışma maliyeti yüksek işlemlerin olduğu yapılarda, web servisi kullanılan yapılarda, 
+remoting uygulamalarında, operasyonun gerçekleştirilmesinden önce hazırlık yapılması veya ön işlem yapılması durumlarında kullanılır.
+
+TEMPLATE
+Template tasarım deseninde bir operasyonu gerçekleştirmek için gerekli olan adımlar ve bu adımları çalıştıracak metotlar abstract bir sınıfta tanımlanır. 
+Bu abstract sınıfı uygulayan gerçek sınıflar gerekli adımları overwrite eder ve abstract sınıfında bu adımları kullanan metotlar çağrılarak işlem gerçekleştirilir. 
+Böylece kod tekrarı yapılmasının önüne geçilmiş olunur
+
+STRATEGY
+bir işlemin birden fazla şekilde gerçekleştirile bilineceği durumları düzenleyen tasarım desenidir.
+Bir işlemin birden fazla şekilde gerçekleştirile bilinmesi derken uygulamamızda log tutma işlemi yapılmasını, 
+birden fazla şekilde derken de dosya bazlı, veri tabanı bazlı log tutmak gibi farklı log tutma şekillerini örnek olarak verebiliriz. 
+Örneğin farklı şifreleme işlemleri yapmak, farklı serileştirme işlemleri yapmak gibi.
+
+COMMAND
+İşlemlerin nesne haline getirilip başka bir nesne(invoker) üzerinden tetiklendiği bir tasarım desenidir.
+Command design pattern (komut tasarım deseni), yapılmak istenilen işlemlerin nesneye dönüştürülüp başka bir nesne tarafından bu işlemlerin tetiklenmesi şeklindedir.
+Command tasarım deseninde, işlem ve işlemin tetiklenmesi yapıları birbirinden ayrılmış olur. 
+İşlemi yapacak nesnenin birden fazla olması durumunda işlemlerin sırayla çalıştırılabilinmesini sağlamış oluruz ve aynı işlem nesnelerini uygulamanın birden fazla yerinde kullanabilir oluruz. 
+Command tasarım deseninde 5 ana yapı vardır.
+1- Receiver: İşlemlerin olduğu gerçek nesne.
+2- Command: Receiver nesnesindeki işlemleri çalıştırabilecek, concrete command nesnelerinin uygulaması gereken soyut sınıf veya arayüz.
+3- Concrete command: command nesnesini uygulayan, receiver da ki işlemlerin yani metotların çalıştırılacağı nesne veya nesneler.
+4- Invoker: Command nesnesi türünden, içinde concrete command listesi veya bir concrete command tanımlı olan ve command nesnesindeki metotu çalıştıran nesne.
+5- Client: Diğer nesneleri kullanarak isteği gönderen nesne.
+
+ITERATOR
+Nesne koleksyonlarının (list,array,queue) elemanlarını belirlenen kurallara göre elde edilmesini düzenleyen tasarım desenidir.
+Iterator tasarım deseni ile koleksiyon yapısı bilinmesine ihtiyaç olmadan koleksiyon elemanları üzerinde işlem yapılabilmesini sağlar. 
+Yani iterator tasarım deseni kullanılarak koleksiyonun array, queue, list olması önemli olmadan, aynı şekilde elemanlarının elde edilmesi sağlanır.
+Koleksiyon içindeki nesnelerin nasıl elde edileceği tercihe göre belirlenebilir. Yani sonraki, ilk, son, 3. Eleman gibi istenilen şekilde elemanlara ulaşılabilir. 
+Iterator tasarım deseninde 5 temel yapı bulunur. 
+1- Iterator: Koleksiyon elemanları elde edilebilmesi için gerekli işlemleri tanımlar.
+2- Aggregate: Koleksiyon barındıran nesnelerin Iterator tipinden nesne oluşturacağını belirten arayüzdür.
+3- Concrete Aggregate: Koleksiyon barındıran nesnedir. Aggregate arayüzünü uygular ve ilgili ConcreteIterator nesnesini oluşturur.
+4- ConcreteIterator:  Aggregate yapısında ki koleksiyon elemanlarının elde edilmesini sağlayan metotları barındıran yani Iterator arayüzünü uygulayan gerçek iterator nesnesidir.
+5- Client: Bu yapıyı kullanarak koleksiyon içindeki elemanlara erişen yapıdır.
+
+FACADE
+Alt sistemlerin direkt olarak kullanılması yerine alt sistemdeki nesneleri kullanan başka bir nesne üzerinden kullanılmasını sağlayan tasarım desenidir. 
+
+FACTORY METHOD
+Aynı arayüzü kullanan nesnelerin üretiminden sorumlu tasarım desenidir.
+factory method tasarım deseni yapı olarak abstract factory desenine çok benzer. 
+Factory Method tasarım deseni aynı abstract sınıfı veya arayüzü uygulayan sınıfların üretiminden sorumludur. 
+Kullanımı 2 şekilde olabilir. 
+Birinci kullanım şeklinde nesne üretiminden sorumlu bir class olur ve bu sınıftaki metoda gönderilen parametre ile üretilecek sınıfın türü belirlenir. 
+İkinci kullanım şeklinde ise her nesne üretimi için aynı arayüzü kullanan sınıflar oluşturulur ve hangi sınıftan nesne istenirse belirli bir sınıfı verir. 
+Abstract method tasarım deseni abstract factory tasarım deseni ile çok benzer bir yapıdadır.
+
+MEMENTO
+Bir nesnenin tamamının veya bazı özelliklerinin tutularak sonradan tekrar elde edilmesini yöneten tasarım desenidir.
+Memento tasarım deseni nesnenin bir halinin kopyasını alıp sonra bu kopyanın tekrar elde edilmesini sağlar. Genelde geri al işlemi için kullanılır. 
+Memento tasarım deseni 3 yapıdan oluşur.
+1- Originator: Tamamının veya bazı özelliklerinin kopyasının tutulacağı nesnedir. Memento nesnesini oluşturan ve geri yüklenmesinden sorumludur.
+2- Memento: Originator nesnesinin saklanacak özelliklerinin tanımlı olduğu nesne.
+3- Caretaker:  Saklanacak olan memento nesnesinin referansını içinde barındıran nesnedir.
+
+STATE
+Nesnelerin farklı durumlarda farklı çalışmalarını düzenleyen bir tasarım desenidir.
+State tasarım deseni; bir nesnedeki bir özellik değiştirildiğinde o nesnenin çalışmasını değiştirmesini veya o durum için kod işlemesini düzenler. 
+Şöyle ki; içinde bir arayüzün referansını tutar ve property si değiştiğinde o arayüze o arayüzden türeyen başka bir nesne atar. 
+Senaryoya göre bu arayüzde ki işlemi kendi tetikler veya sonraki istekte bu arayüzde ki işlem tetiklenir.
+Örneğin telefonların kapatma tuşu telefon açık ise kapatır kapalı ise telefonu açar.
+Veya bir e-ticaret uygulaması yapıyoruz ve sipariş “ödeme onaylandı” durumuna gelince faturası otomatik olarak muhasebe programına işleniyor. 
+”Hazırlanıyor” durumuna getirildiğinde depo elemanının siparişi hazırlamasını bildiriyor. 
+“Kargoya Verildi” durumuna gelince de müşteriye kargo takip numarasını mail olarak gönderiyor.
+
+BUILDER
+Birden fazla parçadan oluşan nesnelerin üretilmesinden sorumlu bir tasarım desenidir.
+
+Bazı nesneler birden fazla nesnenin birleşmesinden(bazı işlemleri yapması sonucu) oluşabilir. 
+Zamanla bu ana nesneyi oluşturan nesnelerin yapısı değişebilir, bu nesnelerin oluşturulması karışık bir hal alabilir veya bu nesnelere başka nesneler de eklenebilir. 
+Builder tasarım deseni bu gibi durumlarda genişletilebilirliği sağlamak ve kod karmaşıklığını engellemek için kullanılır. 
+Builder tasarım deseninde bu nesnelerin oluşturulması Builder denilen sınıfların sorumluluğundadır. 
+Client sadece oluşturulacak nesne türünü belirterek ana nesneyi oluşturan nesnelerin oluşturulmasıyla ilgilenmez.
+Builder desenini oluşturan 4 yapı vardır.
+1- Product: Oluşturulan nesne.
+2- Builder: Product oluşturacak nesnelerin (Concrete Builder) uygulaması gereken arayüz.
+3- Concrete Builder: Product nesnesini oluşturan nesne veya özelliklerin oluşturulduğu sınıflar. Her concrete builder sınıfı aynı arayüzde farklı bir ürünün oluşturulmasını sağlar.
+4- Director: Verilen builder nesnesine göre product örneği oluşturur.
+
+ABSTRACT FACTORY
+Desenin amacı; birbirleri ile ilişkili sınıfların oluşturulmasını düzenlemektir. 
+Aralarında ilişki bulunan nesnelerin üretiminden sorumlu olan soyut fabrikaların tasarlandığı tasarım deseni olarak düşünülebilinir. 
+Abstract Factory tasarım deseni sayesinde böyle durumlarda bu nesneler her oluşturulduğunda if gibi karar mekanizması yazmaya gerek kalmaz. 
+Abstract factory deseninin uygulanabilinmesi için bu desendeki nesnelerin aynı abstract class veya interface i uygulamış olması gerekir. 
+Bu desen üretilen nesnelerin uyguladıkları arayüzler ile ilgilendiğinden desene yeni bir nesne eklemek kolaydır.
