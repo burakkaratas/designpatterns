@@ -100,3 +100,6 @@ Bazı nesnelerin üretilme maliyeti oldukça yüksek olabilir. Veya aynı değer
 Böyle nesnelerin üretim maliyetini azaltmak için var olan nesnenin kopyasının üretilmesi yoluna gidilebilinir. 
 Prototype tasarım deseni böyle durumdaki nesnelerin yönetilmesini sağlar. 
 Buradaki kopyalama işlemi “Deep Copy – Derin Kopyalama” şeklindedir.
+
+COMPOSITE
+Ağaç yapısında ki nesne kalıplarının hiyerarşik olarak iç içe kullanılmasını düzenlemektir.
