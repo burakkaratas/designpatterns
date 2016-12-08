@@ -93,3 +93,10 @@ Aralarında ilişki bulunan nesnelerin üretiminden sorumlu olan soyut fabrikala
 Abstract Factory tasarım deseni sayesinde böyle durumlarda bu nesneler her oluşturulduğunda if gibi karar mekanizması yazmaya gerek kalmaz. 
 Abstract factory deseninin uygulanabilinmesi için bu desendeki nesnelerin aynı abstract class veya interface i uygulamış olması gerekir. 
 Bu desen üretilen nesnelerin uyguladıkları arayüzler ile ilgilendiğinden desene yeni bir nesne eklemek kolaydır.
+
+PROTOTYPE
+Var olan nesnelerin kopyasının üretiminden sorumlu tasarım desenidir.
+Bazı nesnelerin üretilme maliyeti oldukça yüksek olabilir. Veya aynı değerlerde nesne üretilmesi gereken durumlar olabilir. 
+Böyle nesnelerin üretim maliyetini azaltmak için var olan nesnenin kopyasının üretilmesi yoluna gidilebilinir. 
+Prototype tasarım deseni böyle durumdaki nesnelerin yönetilmesini sağlar. 
+Buradaki kopyalama işlemi “Deep Copy – Derin Kopyalama” şeklindedir.
