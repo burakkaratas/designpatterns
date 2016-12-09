@@ -103,3 +103,10 @@ Buradaki kopyalama işlemi “Deep Copy – Derin Kopyalama” şeklindedir.
 
 COMPOSITE
 Ağaç yapısında ki nesne kalıplarının hiyerarşik olarak iç içe kullanılmasını düzenlemektir.
+
+VISITOR
+Uygulamada ki sınıflara yeni metotlar eklenmesini düzenleyen bir tasarım desenidir. 
+Uygulamada ki bir yapıda ki bazı sınıflara bir işlevsellik eklenmesi gerektiğinde genelde ya yapıdaki sınıfların uyguladığı arayüzde metot tanımlanır ve bu arayüzü uygulayan sınıflarda metot yazılır veya eklenmesi gereken sınıflara eklenir. 
+Arayüze metot tanımlarsak metodu kullanmayacak olan sınıflarda da bu metot uygulanacağı için tasarım prensiplerinden “Interface Segregation Principle - ISP” a uymamış oluruz. 
+İlgili alt sınıflara ayrı ayrı metot eklersek de ileride bakımı zorlaşacak ve kodun karışmasına neden olacak bir yapı kurmuş oluruz. 
+Böyle durumlarda bu hatalara düşmemek için visitor tasarım deseni kullanılabilir.
