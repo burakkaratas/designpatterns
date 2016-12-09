@@ -110,3 +110,9 @@ Uygulamada ki bir yapıda ki bazı sınıflara bir işlevsellik eklenmesi gerekt
 Arayüze metot tanımlarsak metodu kullanmayacak olan sınıflarda da bu metot uygulanacağı için tasarım prensiplerinden “Interface Segregation Principle - ISP” a uymamış oluruz. 
 İlgili alt sınıflara ayrı ayrı metot eklersek de ileride bakımı zorlaşacak ve kodun karışmasına neden olacak bir yapı kurmuş oluruz. 
 Böyle durumlarda bu hatalara düşmemek için visitor tasarım deseni kullanılabilir.
+
+INTERPRETER
+Belli bir düzen veya kurala bağlı olan metinlerin sayısal veya mantıksal olarak işlenmesi gereken durumlarda kullanılır.
+Interpreter tasarım deseni, düzgün gramer ifadesindeki metinlerin sayısal veya mantıksal olarak işlenmesi gereken durumlarda kullanılır. 
+Düzgün gramer ifadesi olarak, metinde ki karakterlerin özel karşılıkları olduğu metinler olarak düşünebiliriz.
+Interpreter tasarım deseninde; bu özel ifadelerin işlenmesi için hepsi aynı ara yüz veya abstract sınıfı uygulayan sınıflar tasarlanır.
